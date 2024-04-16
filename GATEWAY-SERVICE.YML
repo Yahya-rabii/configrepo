@@ -88,6 +88,26 @@ spring:
                   - CONNECT
                 allowedHeaders: '*'
                 allowCredentials: true
+          - id: ACCOUNT-SERVICE
+            uri: lb://ACCOUNT-SERVICE
+            predicates:
+              - Path=/ACCOUNT-SERVICE/**
+            metadata:
+              cors:
+                allowedOrigins:
+                  - "http://localhost:4200"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - PATCH
+                  - OPTIONS
+                  - HEAD
+                  - TRACE
+                  - CONNECT
+                allowedHeaders: '*'
+                allowCredentials: true
     discovery:
       enabled: true
   security:
@@ -119,4 +139,7 @@ springdoc:
       - url: /LOAN-SERVICE/v3/api-docs
         name: LOAN SERVICE
         display-name: LOAN SERVICE
+      - url: /ACCOUNT-SERVICE/v3/api-docs
+        name: ACCOUNT SERVICE
+        display-name: ACCOUNT SERVICE
 
