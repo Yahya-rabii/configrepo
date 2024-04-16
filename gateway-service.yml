@@ -1,0 +1,144 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: client-service
+          uri: lb://client-service
+          predicates:
+            - Path=/client-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+        - id: loan-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/loan-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+        - id: contract-service
+          uri: lb://contract-service
+          predicates:
+            - Path=/contract-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/account-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+    discovery:
+      enabled: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/AppCC-realm
+springdoc:
+  enable-native-support: true
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - url: /v3/api-docs
+        name: gateway
+        display-name: gateway
+      - url: /client-service/v3/api-docs
+        name: client service
+        display-name: client service
+      - url: /contract-service/v3/api-docs
+        name: contract service
+        display-name: contract service
+      - url: /auth-service/v3/api-docs
+        name: auth service
+        display-name: auth service
+      - url: /loan-service/v3/api-docs
+        name: loan service
+        display-name: loan service
+      - url: /account-service/v3/api-docs
+        name: account service
+        display-name: account service
