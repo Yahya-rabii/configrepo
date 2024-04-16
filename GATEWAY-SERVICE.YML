@@ -4,110 +4,110 @@ server:
     context-path: /
 spring:
   application:
-    name: GATEWAY-SERVICE
+    name: gateway-service
   cloud:
     gateway:
-        routes:
-          - id: CLIENT-SERVICE
-            uri: lb://CLIENT-SERVICE
-            predicates:
-              - Path=/CLIENT-SERVICE/**
-            metadata:
-              cors:
-                allowedOrigins:
-                  - "http://localhost:4200"
-                allowedMethods:
-                  - GET
-                  - POST
-                  - PUT
-                  - DELETE
-                  - PATCH
-                  - OPTIONS
-                  - HEAD
-                  - TRACE
-                  - CONNECT
-                allowedHeaders: '*'
-                allowCredentials: true
-          - id: LOAN-SERVICE
-            uri: lb://LOAN-SERVICE
-            predicates:
-              - Path=/LOAN-SERVICE/**
-            metadata:
-              cors:
-                allowedOrigins:
-                  - "http://localhost:4200"
-                allowedMethods:
-                  - GET
-                  - POST
-                  - PUT
-                  - DELETE
-                  - PATCH
-                  - OPTIONS
-                  - HEAD
-                  - TRACE
-                  - CONNECT
-                allowedHeaders: '*'
-                allowCredentials: true
-          - id: CONTRACT-SERVICE
-            uri: lb://CONTRACT-SERVICE
-            predicates:
-              - Path=/CONTRACT-SERVICE/**
-            metadata:
-              cors:
-                allowedOrigins:
-                  - "http://localhost:4200"
-                allowedMethods:
-                  - GET
-                  - POST
-                  - PUT
-                  - DELETE
-                  - PATCH
-                  - OPTIONS
-                  - HEAD
-                  - TRACE
-                  - CONNECT
+      routes:
+        - id: client-service
+          uri: lb://client-service
+          predicates:
+            - Path=/client-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
               allowedHeaders: '*'
               allowCredentials: true
-          - id: AUTH-SERVICE
-            uri: lb://AUTH-SERVICE
-            predicates:
-              - Path=/AUTH-SERVICE/**
-            metadata:
-              cors:
-                allowedOrigins:
-                  - "http://localhost:4200"
-                allowedMethods:
-                  - GET
-                  - POST
-                  - PUT
-                  - DELETE
-                  - PATCH
-                  - OPTIONS
-                  - HEAD
-                  - TRACE
-                  - CONNECT
-                allowedHeaders: '*'
-                allowCredentials: true
-          - id: ACCOUNT-SERVICE
-            uri: lb://ACCOUNT-SERVICE
-            predicates:
-              - Path=/ACCOUNT-SERVICE/**
-            metadata:
-              cors:
-                allowedOrigins:
-                  - "http://localhost:4200"
-                allowedMethods:
-                  - GET
-                  - POST
-                  - PUT
-                  - DELETE
-                  - PATCH
-                  - OPTIONS
-                  - HEAD
-                  - TRACE
-                  - CONNECT
-                allowedHeaders: '*'
-                allowCredentials: true
+        - id: loan-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/loan-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+        - id: contract-service
+          uri: lb://contract-service
+          predicates:
+            - Path=/contract-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/account-service/**
+          metadata:
+            cors:
+              allowedOrigins:
+                - "http://localhost:4200"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - PATCH
+                - OPTIONS
+                - HEAD
+                - TRACE
+                - CONNECT
+              allowedHeaders: '*'
+              allowCredentials: true
     discovery:
       enabled: true
   security:
@@ -125,21 +125,20 @@ springdoc:
     config-url: /v3/api-docs/swagger-config
     urls:
       - url: /v3/api-docs
-        name: Gateway
-        display-name: Gateway
-      - url: /CLIENT-SERVICE/v3/api-docs
-        name: CLIENT Service
-        display-name: CLIENT Service
-      - url: /CONTRACT-SERVICE/v3/api-docs
-        name: CONTRACT Service
-        display-name: CONTRACT Service
-      - url: /AUTH-SERVICE/v3/api-docs
-        name: Auth Service
-        display-name: Auth Service
-      - url: /LOAN-SERVICE/v3/api-docs
-        name: LOAN SERVICE
-        display-name: LOAN SERVICE
-      - url: /ACCOUNT-SERVICE/v3/api-docs
-        name: ACCOUNT SERVICE
-        display-name: ACCOUNT SERVICE
-
+        name: gateway
+        display-name: gateway
+      - url: /client-service/v3/api-docs
+        name: client service
+        display-name: client service
+      - url: /contract-service/v3/api-docs
+        name: contract service
+        display-name: contract service
+      - url: /auth-service/v3/api-docs
+        name: auth service
+        display-name: auth service
+      - url: /loan-service/v3/api-docs
+        name: loan service
+        display-name: loan service
+      - url: /account-service/v3/api-docs
+        name: account service
+        display-name: account service
