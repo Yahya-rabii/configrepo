@@ -16,10 +16,11 @@ spring:
           filters:
             - name: Cors
               args:
-                - allowedOrigins: ${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_FILTERS_CORS_ALLOWED_ORIGINS:http://localhost:4200}
-                - allowedMethods: ${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_FILTERS_CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT}
-                - allowedHeaders: ${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_FILTERS_CORS_ALLOWED_HEADERS:*}
-                - allowCredentials: ${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_FILTERS_CORS_ALLOW_CREDENTIALS:true}
+                - allowedOrigins: http://localhost:4200
+                - allowedMethods: GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT
+                - allowedHeaders: "*"
+                - allowCredentials: true
+
           metadata:
             cors:
               allowedOrigins:
@@ -43,10 +44,11 @@ spring:
           filters:
             - name: Cors
               args:
-                - allowedOrigins: ${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_FILTERS_CORS_ALLOWED_ORIGINS:http://localhost:4200}
-                - allowedMethods: ${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_FILTERS_CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT}
-                - allowedHeaders: ${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_FILTERS_CORS_ALLOWED_HEADERS:*}
-                - allowCredentials: ${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_FILTERS_CORS_ALLOW_CREDENTIALS:true}
+                - allowedOrigins: http://localhost:4200
+                - allowedMethods: GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT
+                - allowedHeaders: "*"
+                - allowCredentials: true
+         
           metadata:
             cors:
               allowedOrigins:
@@ -70,10 +72,12 @@ spring:
           filters:
             - name: Cors
               args:
-                - allowedOrigins: ${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_FILTERS_CORS_ALLOWED_ORIGINS:http://localhost:4200}
-                - allowedMethods: ${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_FILTERS_CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT}
-                - allowedHeaders: ${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_FILTERS_CORS_ALLOWED_HEADERS:*}
-                - allowCredentials: ${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_FILTERS_CORS_ALLOW_CREDENTIALS:true}
+                - allowedOrigins: http://localhost:4200
+                - allowedMethods: GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT
+                - allowedHeaders: "*"
+                - allowCredentials: true
+
+
           metadata:
             cors:
               allowedOrigins:
@@ -94,13 +98,16 @@ spring:
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_URI:auth-service}
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_PREDICATES_PATH:/auth-service/**}
+         
           filters:
             - name: Cors
               args:
-                - allowedOrigins: ${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_FILTERS_CORS_ALLOWED_ORIGINS:http://localhost:4200}
-                - allowedMethods: ${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_FILTERS_CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT}
-                - allowedHeaders: ${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_FILTERS_CORS_ALLOWED_HEADERS:*}
-                - allowCredentials: ${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_FILTERS_CORS_ALLOW_CREDENTIALS:true}
+                - allowedOrigins: http://localhost:4200
+                - allowedMethods: GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT
+                - allowedHeaders: "*"
+                - allowCredentials: true
+
+
           metadata:
             cors:
               allowedOrigins:
@@ -124,10 +131,11 @@ spring:
           filters:
             - name: Cors
               args:
-                - allowedOrigins: ${SPRING_CLOUD_GATEWAY_ROUTES_ACCOUNT_SERVICE_FILTERS_CORS_ALLOWED_ORIGINS:http://localhost:4200}
-                - allowedMethods: ${SPRING_CLOUD_GATEWAY_ROUTES_ACCOUNT_SERVICE_FILTERS_CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT}
-                - allowedHeaders: ${SPRING_CLOUD_GATEWAY_ROUTES_ACCOUNT_SERVICE_FILTERS_CORS_ALLOWED_HEADERS:*}
-                - allowCredentials: ${SPRING_CLOUD_GATEWAY_ROUTES_ACCOUNT_SERVICE_FILTERS_CORS_ALLOW_CREDENTIALS:true}
+                - allowedOrigins: http://localhost:4200
+                - allowedMethods: GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT
+                - allowedHeaders: "*"
+                - allowCredentials: true
+
           metadata:
             cors:
               allowedOrigins:
