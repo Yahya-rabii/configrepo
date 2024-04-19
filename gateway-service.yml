@@ -12,6 +12,13 @@ spring:
           uri: lb://client-service
           predicates:
             - Path=/client-service/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:4200"
+                allowedMethods: "GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT"
+                allowedHeaders: "*"
+                allowCredentials: true
           metadata:
             cors:
               allowedOrigins:
@@ -32,6 +39,13 @@ spring:
           uri: lb://loan-service
           predicates:
             - Path=/loan-service/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:4200"
+                allowedMethods: "GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT"
+                allowedHeaders: "*"
+                allowCredentials: true
           metadata:
             cors:
               allowedOrigins:
@@ -52,6 +66,13 @@ spring:
           uri: lb://contract-service
           predicates:
             - Path=/contract-service/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:4200"
+                allowedMethods: "GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT"
+                allowedHeaders: "*"
+                allowCredentials: true
           metadata:
             cors:
               allowedOrigins:
@@ -72,6 +93,13 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth-service/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:4200"
+                allowedMethods: "GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT"
+                allowedHeaders: "*"
+                allowCredentials: true
           metadata:
             cors:
               allowedOrigins:
@@ -92,6 +120,13 @@ spring:
           uri: lb://account-service
           predicates:
             - Path=/account-service/**
+          filters:
+            - name: Cors
+              args:
+                allowedOrigins: "http://localhost:4200"
+                allowedMethods: "GET,POST,PUT,DELETE,PATCH,OPTIONS,HEAD,TRACE,CONNECT"
+                allowedHeaders: "*"
+                allowCredentials: true
           metadata:
             cors:
               allowedOrigins:
