@@ -38,7 +38,7 @@ spring:
                 - TRACE
                 - CONNECT
               allowedHeaders: '${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_METADATA_CORS_ALLOWED_HEADERS:*}'
-              allowCredentials: true
+              allowCredentials: ${ALLOW_CREDENTIALS:true}
         - id: loan-service
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_URI:loan-service}
           predicates:
@@ -58,7 +58,7 @@ spring:
                 - TRACE
                 - CONNECT
               allowedHeaders: '${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_METADATA_CORS_ALLOWED_HEADERS:*}'
-              allowCredentials: true
+              allowCredentials: ${ALLOW_CREDENTIALS:true}
         - id: contract-service
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_URI:contract-service}
           predicates:
@@ -78,7 +78,7 @@ spring:
                 - TRACE
                 - CONNECT
               allowedHeaders: '${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_METADATA_CORS_ALLOWED_HEADERS:*}'
-              allowCredentials: true
+              allowCredentials: ${ALLOW_CREDENTIALS:true}
         - id: auth-service
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_URI:auth-service}
           predicates:
