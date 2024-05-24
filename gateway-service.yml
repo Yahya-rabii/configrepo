@@ -24,7 +24,7 @@ spring:
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_PREDICATES_PATH:/client-service/**}
           filters:
-            - TokenRelay=myrgistartionid
+            - TokenRelay=
           metadata:
             cors:
               allowedOrigins:
@@ -46,7 +46,7 @@ spring:
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
           filters:
-            - TokenRelay=myrgistartionid
+            - TokenRelay=
           metadata:
             cors:
               allowedOrigins:
@@ -68,7 +68,7 @@ spring:
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
           filters:
-            - TokenRelay=myrgistartionid
+            - TokenRelay=
           metadata:
             cors:
               allowedOrigins:
@@ -90,7 +90,7 @@ spring:
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
           filters:
-            - TokenRelay=myrgistartionid
+            - TokenRelay=
           metadata:
             cors:
               allowedOrigins:
@@ -112,7 +112,7 @@ spring:
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
           filters:
-            - TokenRelay=myrgistartionid
+            - TokenRelay=
           metadata:
             cors:
               allowedOrigins:
