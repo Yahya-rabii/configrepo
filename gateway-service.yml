@@ -23,6 +23,8 @@ spring:
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_URI:client-service}
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_CLIENT_SERVICE_PREDICATES_PATH:/client-service/**}
+          filters:
+            - TokenRelay=myrgistartionid
           metadata:
             cors:
               allowedOrigins:
@@ -43,6 +45,8 @@ spring:
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_URI:loan-service}
           predicates:
             - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
+          filters:
+            - TokenRelay=myrgistartionid
           metadata:
             cors:
               allowedOrigins:
@@ -62,7 +66,9 @@ spring:
         - id: contract-service
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_URI:contract-service}
           predicates:
-            - Path=${SPRING_CLOUD_GATEWAY_ROUTES_CONTRACT_SERVICE_PREDICATES_PATH:/contract-service/**}
+            - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
+          filters:
+            - TokenRelay=myrgistartionid
           metadata:
             cors:
               allowedOrigins:
@@ -82,7 +88,9 @@ spring:
         - id: auth-service
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_URI:auth-service}
           predicates:
-            - Path=${SPRING_CLOUD_GATEWAY_ROUTES_AUTH_SERVICE_PREDICATES_PATH:/auth-service/**}
+            - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
+          filters:
+            - TokenRelay=myrgistartionid
           metadata:
             cors:
               allowedOrigins:
@@ -102,7 +110,9 @@ spring:
         - id: account-service
           uri: lb://${SPRING_CLOUD_GATEWAY_ROUTES_ACCOUNT_SERVICE_URI:account-service}
           predicates:
-            - Path=${SPRING_CLOUD_GATEWAY_ROUTES_ACCOUNT_SERVICE_PREDICATES_PATH:/account-service/**}
+            - Path=${SPRING_CLOUD_GATEWAY_ROUTES_LOAN_SERVICE_PREDICATES_PATH:/loan-service/**}
+          filters:
+            - TokenRelay=myrgistartionid
           metadata:
             cors:
               allowedOrigins:
